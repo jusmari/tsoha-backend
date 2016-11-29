@@ -6,7 +6,7 @@
 
  (def config {:store                :database
               :migration-dir        "uusitsoha/migrations/"
-              :init-script          "uusitsoha/migrations/init.sql"
+              :init-script          "init.sql"
               :migration-table-name "schema_migrations"
               :db spec})
 

@@ -1,7 +1,6 @@
 
 
 
---;;
 
 CREATE TABLE IF NOT EXISTS questions (
   id varchar NOT NULL,
