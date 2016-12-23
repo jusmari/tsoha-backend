@@ -1,7 +1,11 @@
-(ns uusitsoha.handler-test
+(ns uusitsoha.web-test
   (:require [clojure.test :refer :all]
             [ring.mock.request :as mock]
-            [uusitsoha.handler :refer :all]))
+            [uusitsoha.web :refer :all]))
+
+(defn test-question []
+  (app
+    (mock/request :post "/questions" (body '(body "asdasdasd")))))
 
 (deftest test-app
   (testing "main route"
@@ -12,3 +16,10 @@
   (testing "not-found route"
     (let [response (app (mock/request :get "/invalid"))]
       (is (= (:status response) 404)))))
+
+(deftest question-test
+  (testing "question creating"
+    (test-question)
+    (let [response (app (mock/request :get "/questions"))]
+      (is (= (:status response) 200)
+      (is (= (:body response) "asdasdasd"))))))

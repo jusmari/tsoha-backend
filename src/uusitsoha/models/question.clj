@@ -36,7 +36,7 @@
 
 ;uuden kysymyksen luonti
 (defn create-new [req]
-    (let [name (str (:name req))
+    (let [name (str (:body req))
           id (uuid)]
        (sql/execute!
          spec

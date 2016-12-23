@@ -9,6 +9,7 @@
                  [ring/ring-jetty-adapter "1.5.0"]
                  [cheshire "5.6.3"]
                  [crypto-password "0.2.0"]
+                 [bouncer "1.0.0"]
                  ;[org.slf4j/slf4j-log4j12 "1.7.21"] ???????
                  [migratus "0.8.32"]
                  ;[ring/ring-core "1.5.0"]
