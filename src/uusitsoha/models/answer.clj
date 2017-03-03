@@ -1,9 +1,12 @@
-(ns uusitsoha.models.membership
+(ns uusitsoha.models.answer
   (:use ring.util.response)
   (:require [clojure.java.jdbc :as sql]))
 
 (defn uuid []
   (str (java.util.UUID/randomUUID)))
+
+(def spec (or (System/getenv "DATABASE_URL")
+              "postgresql://localhost:5432/tsoha"))
 
 (defn create-new [req]
     (let [user_id (str (:user_id req))
@@ -19,6 +22,15 @@
     ["DELETE FROM membership WHERE id = ?" user_id]))
 
 (defn delete-by-id [id]
-    (sql/execute!
-      spec
-      ["DELETE FROM membership WHERE id = ?" id]))
+  (sql/execute!
+    spec
+    ["DELETE FROM membership WHERE id = ?" id]))
+
+(defn all []
+  )
+
+(defn show []
+  )
+
+(defn update-id []
+  )

@@ -16,10 +16,13 @@
         spec
         ["SELECT * FROM memberships ORDER BY name ASC LIMIT 128"]))))
 
-(defn create-new [req]
+(defn create [req]
     (let [user_id (:user_id req)
           org_id (:user_id req)
           id (uuid)]
        (sql/execute!
          spec
          ["INSERT INTO users (user_id, org_id) VALUES (?, ?)" user_id org_id])))
+
+(defn find-by-id [id]
+  )

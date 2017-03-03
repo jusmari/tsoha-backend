@@ -5,4 +5,4 @@
   (model/create params))
 
 (defn find-by-user-id [user-id]
-  model/find-by-id [user-id])
+  (model/find-by-id [user-id]))

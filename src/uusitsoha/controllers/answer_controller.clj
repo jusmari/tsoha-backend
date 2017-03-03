@@ -16,15 +16,15 @@
   (model/all))
 
 (defn delete [id]
-  (model/delete id)
-  (ring/redirect (redirect-id "")))
+  (model/delete-by-id id)
+  (ring/redirect "/answers/"))
 
 (defn show [id]
   (model/show id))
 
 (defn update-with-id [id req]
   (model/update-id id req)
-  (ring/redirect (redirect-id "")))
+  (ring/redirect (redirect-id id)))
 
 ;routes
 (defroutes routes
