@@ -26,7 +26,6 @@
   (model/update-id id req)
   (ring/redirect (str "/" id)))
 
-;routes
 (defroutes routes
   (context "/questions" []
     (GET  "/" [] (all))

@@ -20,7 +20,6 @@
   (route/resources "/")
   (route/not-found "Not Found"))
 
-;ei mitään hajua mitä nää tekee, mutta toimii :ccc
 (def application
   (-> (handler/api routes)
     ;(wrap-reload)

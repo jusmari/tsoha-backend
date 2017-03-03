@@ -33,5 +33,4 @@
     (POST "/" request (create (:params request)))
     (DELETE "/:id" [id] (delete id))
     (GET "/:id" [id] (show id))
-    (POST "/update/:id" [id request] (update-with-id id request)))
-)
+    (POST "/update/:id" [id request] (update-with-id id request))))
