@@ -13,7 +13,8 @@
                  ;[org.slf4j/slf4j-log4j12 "1.7.21"] ???????
                  [migratus "0.8.32"]
                  ;[ring/ring-core "1.5.0"]
-                 [ring/ring-json "0.4.0"]]
+                 [ring/ring-json "0.4.0"]
+                 [ring-cors "0.1.9"]]
   :plugins [[lein-ring "0.9.7"]
             [migratus-lein "0.4.1"]]
   :ring {:handler uusitsoha.web/application

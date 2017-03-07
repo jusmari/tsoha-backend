@@ -10,7 +10,9 @@
             [uusitsoha.controllers.question_controller :as questions]
             [uusitsoha.controllers.user_controller :as users]
             [uusitsoha.controllers.organization_controller :as organizations]
-            [uusitsoha.migrations.m_migrate :as db])
+            [uusitsoha.migrations.m_migrate :as db]
+            [ring.middleware.cors :refer [wrap-cors]]
+            )
   (:gen-class))
 
 (defroutes routes
@@ -23,6 +25,8 @@
 (def application
   (-> (handler/api routes)
     ;(wrap-reload)
+    (wrap-cors :access-control-allow-origin [#".*"]
+                       :access-control-allow-methods [:get :put :post :delete])
     (wrap-keyword-params)
     (wrap-json-params {})
     (wrap-params {})
